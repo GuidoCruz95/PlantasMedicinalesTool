@@ -1,3 +1,6 @@
+# PlantasMedicinalesTool Descripcion
+Aplicacion web para mostrar informacion de plantas medicinales, con el objetivo de ayudar a los usuarios entender las propiedasdes de los mismos y poder usarlos de manera correcta.
+
 # PlantasMedicinalesTool
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
