@@ -30,9 +30,10 @@ import { VistaListaPlantasComponent } from './vista-lista-plantas/vista-lista-pl
     AppComponent,
     AdminLayoutComponent,
     ListaUsuariosComponent,
-    VistaListaPlantasComponent
+    VistaListaPlantasComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
