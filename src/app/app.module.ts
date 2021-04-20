@@ -15,6 +15,9 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { ListaUsuariosComponent } from './web-components/lista-usuarios/lista-usuarios.component';
 import { ComponenteDePruebaComponent } from './web-components/componente-de-prueba/componente-de-prueba.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'environments/environment'
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -24,7 +27,8 @@ import { ComponenteDePruebaComponent } from './web-components/componente-de-prue
     NavbarModule,
     FooterModule,
     SidebarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   declarations: [
     AppComponent,

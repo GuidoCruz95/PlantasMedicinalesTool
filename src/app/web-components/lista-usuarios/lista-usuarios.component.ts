@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UsuarioServiceService } from '../../services/usuario-service.service'
+
 @Component({
   selector: 'app-lista-usuarios',
   templateUrl: './lista-usuarios.component.html',
@@ -8,27 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class ListaUsuariosComponent implements OnInit {
 
   tittle = "Informacion a mostrar"
-  data_two_way_headers = ["Name", "LastName"]
-  data_two_way_content = [
-    {
-      "name": "Juanito", 
-      "lastName": "Perez"
-    },
-    {
-      "name": "Jose", 
-      "lastName": "Perez"
-    },
-    {
-      "name": "Andra", 
-      "lastName": "Santivanhiez"
-    },
-    {
-      "name": "Daniela", 
-      "lastName": "Sanjines"
-    }
-  ]
+  data_two_way_headers = ["Name", "LastName", "Email"]
+  data_two_way_content = []
 
-  constructor() { }
+  constructor(private userService: UsuarioServiceService) { }
 
   agregarNuevoElementoADataTwoWay(): void {
     var nuevoElemento = {
@@ -44,6 +29,14 @@ export class ListaUsuariosComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    this.userService.getUsers().subscribe(res=>{
+      this.data_two_way_content = res.map(a => {
+        const data = a.payload.doc.data();
+        data.id = a.payload.doc.id;
+        return data;
+      })
+    }
+    );
   }
 
 }
