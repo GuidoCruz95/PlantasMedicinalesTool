@@ -17,6 +17,8 @@ import { ComponenteDePruebaComponent } from './web-components/componente-de-prue
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'environments/environment'
+import { VistaListaPlantasComponent } from './vista-lista-plantas/vista-lista-plantas.component';
+import { LoginComponent } from './web-components/login/login.component';
 
 @NgModule({
   imports: [
@@ -34,9 +36,12 @@ import { environment } from 'environments/environment'
     AppComponent,
     AdminLayoutComponent,
     ListaUsuariosComponent,
-    ComponenteDePruebaComponent
+    ComponenteDePruebaComponent,
+    VistaListaPlantasComponent,
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
