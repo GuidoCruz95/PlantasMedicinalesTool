@@ -4,15 +4,14 @@
 // The list of which env maps to which file can be found in `angular-cli.json`.
 
 export const environment = {
-  production: false,
-  firebase:{
-    apiKey: "AIzaSyDWUH5I8xakoiL6LPU5O4Yat8a9PSnKuDE",
-    authDomain: "plantas-medicinales-5e724.firebaseapp.com",
-    databaseURL: "https://plantas-medicinales-5e724-default-rtdb.firebaseio.com",
-    projectId: "plantas-medicinales-5e724",
-    storageBucket: "plantas-medicinales-5e724.appspot.com",
-    messagingSenderId: "219202834813",
-    appId: "1:219202834813:web:94631da0f6569c1168fc14",
-    measurementId: "G-W0HQSLZ33E"
+  production: false, 
+  firebaseConfig : {
+    apiKey: "AIzaSyA6J2nJ4WCkO9rbwsN1bIvSxJpaBl36VMA",
+    authDomain: "plantas-medicinales-api.firebaseapp.com",
+    projectId: "plantas-medicinales-api",
+    storageBucket: "plantas-medicinales-api.appspot.com",
+    messagingSenderId: "531507494869",
+    appId: "1:531507494869:web:b2eb8194f94e605cd7875c",
+    measurementId: "G-B1K2CPQQ02"
   }
 };

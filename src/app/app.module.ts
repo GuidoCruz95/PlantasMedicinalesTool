@@ -13,7 +13,11 @@ import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ListaUsuariosComponent } from './web-components/lista-usuarios/lista-usuarios.component';
-import { VistaListaPlantasComponent } from './vista-lista-plantas/vista-lista-plantas.component';
+import { ComponenteDePruebaComponent } from './web-components/componente-de-prueba/componente-de-prueba.component';
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'environments/environment'
+import { VistaListaPlantasComponent } from './web-components/vista-lista-plantas/vista-lista-plantas.component';
 import { LoginComponent } from './web-components/login/login.component';
 
 @NgModule({
@@ -25,14 +29,16 @@ import { LoginComponent } from './web-components/login/login.component';
     NavbarModule,
     FooterModule,
     SidebarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     ListaUsuariosComponent,
+    ComponenteDePruebaComponent,
     VistaListaPlantasComponent,
-    LoginComponent,
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
