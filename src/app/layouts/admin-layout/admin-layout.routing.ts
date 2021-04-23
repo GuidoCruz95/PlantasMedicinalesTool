@@ -10,7 +10,8 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ListaUsuariosComponent } from '../../web-components/lista-usuarios/lista-usuarios.component';
 import { ComponenteDePruebaComponent } from '../../web-components/componente-de-prueba/componente-de-prueba.component'
-import { VistaListaPlantasComponent } from '../../vista-lista-plantas/vista-lista-plantas.component';
+import { VistaListaPlantasComponent } from '../../web-components/vista-lista-plantas/vista-lista-plantas.component';
+import { LoginComponent } from '../../web-components/login/login.component';
 import { Component } from '@angular/core';
 
 export const AdminLayoutRoutes: Routes = [
@@ -25,4 +26,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'lista-usuarios',  component: ListaUsuariosComponent },
     { path: 'componente-prueba',  component: ComponenteDePruebaComponent},
     { path: 'vista-lista-plantas', component:  VistaListaPlantasComponent},
+    { path: 'login', component:  LoginComponent},
 ];

@@ -17,7 +17,7 @@ import { ComponenteDePruebaComponent } from './web-components/componente-de-prue
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'environments/environment'
-import { VistaListaPlantasComponent } from './vista-lista-plantas/vista-lista-plantas.component';
+import { VistaListaPlantasComponent } from './web-components/vista-lista-plantas/vista-lista-plantas.component';
 import { LoginComponent } from './web-components/login/login.component';
 
 @NgModule({
