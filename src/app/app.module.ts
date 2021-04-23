@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ListaUsuariosComponent } from './web-components/lista-usuarios/lista-usuarios.component';
+import { VistaListaPlantasComponent } from './vista-lista-plantas/vista-lista-plantas.component';
 
 @NgModule({
   imports: [
@@ -28,9 +29,11 @@ import { ListaUsuariosComponent } from './web-components/lista-usuarios/lista-us
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    ListaUsuariosComponent
+    ListaUsuariosComponent,
+    VistaListaPlantasComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
