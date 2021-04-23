@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ListaUsuariosComponent } from './web-components/lista-usuarios/lista-usuarios.component';
 import { VistaListaPlantasComponent } from './vista-lista-plantas/vista-lista-plantas.component';
+import { LoginComponent } from './web-components/login/login.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { VistaListaPlantasComponent } from './vista-lista-plantas/vista-lista-pl
     AdminLayoutComponent,
     ListaUsuariosComponent,
     VistaListaPlantasComponent,
+    LoginComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
