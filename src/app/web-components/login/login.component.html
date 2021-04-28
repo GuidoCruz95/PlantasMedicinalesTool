@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center"> INICIAR SESION </h1>
+                    <form [fromGroup] = "loginForm">
+                        <div class="from-group">
+                            <label form="email"> Email or UserName </label>
+                            <input type="email" class="form-control" formControlName= "email" />
+                        </div>
+                        <div class="form-group">
+                            <label form="password"> Password</label>
+                            <input type="password" class="form-control" formControlName= "password" />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block"> Ingresar </button>
+                    </form>
+                    <div class="form-group mt-3">
+                        <p>Create an accoumt?<a> Register</a></p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
