@@ -2,13 +2,25 @@
     <link rel="stylesheet" type="text/css" href="./vista-lista-plantas.component.css">
 </hed>
 <h2>Lista de plantas</h2>
-<div class="content table-responsive table-full-width">
-    <table class="table table-hover table-striped">
-          <tbody>
-              <tr *ngFor="let dato of listaPlantas">
-                  <td><img src={{dato.foto}}></td>
-              </tr>
-          </tbody>
-      </table>
-      
-</div>
+<table *ngIf="listaPlantas">
+  <tr *ngFor="let i of lista">
+    <td>
+      <div class="imagebox" *ngIf="i!=0">
+        <img [src]="listaPlantas[3*i-1].foto" class="img-fluid">
+        <span class="imagebox-desc">{{imageList[3*i-1].downloadTokens}}</span>
+      </div>
+    </td>
+    <td *ngIf="listaPlantas[3*i]">
+      <div class="imagebox">
+        <img [src]="listaPlantas[3*i].foto" class="img-fluid">
+        <span class="imagebox-desc">{{imageList[3*i].nombre}}</span>
+      </div>
+    </td>
+    <td *ngIf="listaPlantas[3*i+1]">
+      <div class="imagebox">
+        <img [src]="listaPlantas[3*i+1].foto" class="img-fluid">
+        <span class="imagebox-desc">{{imageList[3*i+1].nombre}}</span>
+      </div>
+    </td>
+  </tr>
+</table>

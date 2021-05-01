@@ -8,25 +8,17 @@ import { NuevoServicioPlantasService } from '../../services/nuevo-servicio-plant
 })
 export class VistaListaPlantasComponent implements OnInit {
 
-  listaPlantas = []
+  listaPlantas: any[];
+  lista: any[];
+  
   constructor(private plantasService: NuevoServicioPlantasService) { } 
 
-  agregarNuevoElementoAlistaPlantas(): void {
-    var nuevoElemento = {
-      "foto": "NuevoItemName", 
-      "nombre": "NuevoElemnt"
-    }
-
-    this.listaPlantas.push(nuevoElemento)
-  }
-  ngOnInit(): void {
-    this.plantasService.getPlantas().subscribe(res=>{
-      this.listaPlantas = res.map(a => {
-        const dato = a.payload.doc.data();
-        dato.id = a.payload.doc.id;
-        return dato;
-      })
-    }
+  ngOnInit() {
+    this.plantasService.imageDetailList.snapshotChanges().subscribe(
+      list => {
+        this.listaPlantas = list.map(item => { return item.payload.val(); });
+        this.lista =  Array.from(Array(Math.ceil((this.listaPlantas.length+1) / 3)).keys());
+      }
     );
   }
 
