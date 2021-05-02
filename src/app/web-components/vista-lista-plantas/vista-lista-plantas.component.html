@@ -1,12 +1,25 @@
-<hed>
-    <link rel="stylesheet" type="text/css" href="./vista-lista-plantas.component.css">
-</hed>
-<h2>Lista de plantas</h2>
-<div class="grid-container">
-    <div class="grid-item1"><img src=".app/vista-lista-plantas/manzanilla.jpg"></div>
-    <div class="grid-item2"><img src="./eucalipto.jpg"></div>
-    <div class="grid-item3"><img src="./romero.jpg"></div>
-    <div class="grid-item4"><img src="./ruda.jpg"></div>
-    <div class="grid-item5">5</div>
-    <div class="grid-item6">6</div>
+<div class="main-content">
+    <div class="container-fluid">
+        <h1>Lista de plantas</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Plantas Medicinales</h4>
+                        <p class="category">Tenemos la informacion de las siguientes plantas, esperemos poder ayudarlo</p>
+                    </div>
+                    <div class="content all-icons">
+                        <div class="row">
+                            <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6" *ngFor="let planta of plantas$ | async">
+                                <div class="font-icon-detail">
+                                    <img class="img-rounded resized" [src]="planta.foto" [alt]="planta.nombre">
+                                    <span class="imagebox-desc">{{planta.nombre}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
