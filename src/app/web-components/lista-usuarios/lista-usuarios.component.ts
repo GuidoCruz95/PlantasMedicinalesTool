@@ -10,7 +10,7 @@ import { UsuarioServiceService } from '../../services/usuario-service.service'
 export class ListaUsuariosComponent implements OnInit {
 
   tittle = "Informacion a mostrar"
-  data_two_way_headers = ["Name", "LastName", "Email"]
+  data_two_way_headers = ["Nombre", "Apellido", "Correo Electronico"]
   data_two_way_content = []
 
   constructor(private userService: UsuarioServiceService) { }
