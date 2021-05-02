@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NuevoServicioPlantasService } from '../../services/nuevo-servicio-plantas.service'
+import { PlantaService } from '../../services/plantas/planta.service'
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-vista-lista-plantas',
@@ -8,18 +10,11 @@ import { NuevoServicioPlantasService } from '../../services/nuevo-servicio-plant
 })
 export class VistaListaPlantasComponent implements OnInit {
 
-  listaPlantas: any[];
-  lista: any[];
-  
-  constructor(private plantasService: NuevoServicioPlantasService) { } 
+  plantas$: Observable<any[]>;
 
-  ngOnInit() {
-    this.plantasService.imageDetailList.snapshotChanges().subscribe(
-      list => {
-        this.listaPlantas = list.map(item => { return item.payload.val(); });
-        this.lista =  Array.from(Array(Math.ceil((this.listaPlantas.length+1) / 3)).keys());
-      }
-    );
+  constructor(private plantaService: PlantaService) { }
+
+  ngOnInit(): void {
+    this.plantas$ = this.plantaService.getPlantas();
   }
-
 }
