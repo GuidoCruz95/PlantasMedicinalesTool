@@ -13,6 +13,7 @@
                             <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6" *ngFor="let planta of plantas$ | async">
                                 <div class="font-icon-detail">
                                     <img class="img-rounded resized" [src]="planta.foto" [alt]="planta.nombre">
+                                    <span class="imagebox-desc">{{planta.nombre}}</span>
                                 </div>
                             </div>
                         </div>
