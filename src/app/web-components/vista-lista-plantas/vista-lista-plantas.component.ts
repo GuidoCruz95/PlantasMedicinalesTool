@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PlantaService } from '../../services/plantas/planta.service'
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-vista-lista-plantas',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VistaListaPlantasComponent implements OnInit {
 
-  constructor() { }
+  plantas$: Observable<any[]>;
+
+  constructor(private plantaService: PlantaService) { }
 
   ngOnInit(): void {
+    this.plantas$ = this.plantaService.getPlantas();
   }
-
 }
