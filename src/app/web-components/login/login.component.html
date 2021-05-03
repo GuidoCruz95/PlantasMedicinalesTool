@@ -2,21 +2,25 @@
     <div class="col-md-12 mx-auto mt-5">
         <div class="card">
             <div class="card-body">
-                <h1 class="text-center"> INICIAR SESION </h1>
-                    <form [fromGroup] = "loginForm">
-                        <div class="from-group">
-                            <label form="email"> Email or UserName </label>
-                            <input type="email" class="form-control" formControlName= "email" />
-                        </div>
-                        <div class="form-group">
-                            <label form="password"> Password</label>
-                            <input type="password" class="form-control" formControlName= "password" />
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block"> Ingresar </button>
-                    </form>
-                    <!-- <div class="form-group mt-3">
-                        <p>Create an accoumt?<a> Register</a></p>
-                    </div> -->
+                <h2 class="text-center">INICIAR SESION </h2>
+                <form class="col-12">
+                    <div class="form-group" id="user-group">
+                        <label  for="email"> Email</label>
+                        <input type="email" class="form-control" placeholder="email" />
+                    </div>
+                    <div class="form-group" id="password-group">
+                        <label for="password"> Password</label>
+                        <input type="password" class="form-control" placeholder="password"/>
+                    </div>
+                    <div >
+                        <button class=" btn btn-primary btn-log btn-block btn-info btn-fill pull-right" id="button-ingresar"> 
+                           <i class="fas fa-sign-in-alt"></i>  Ingresar
+                        </button>
+                        <button class=" btn btn-danger btn-log btn-block btn-info btn-fill pull-right"> 
+                            Registrar
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
