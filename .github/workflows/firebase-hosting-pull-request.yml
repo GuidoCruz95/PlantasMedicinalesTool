@@ -8,8 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: 'firebase deploy'
+      - uses: actions/setup-node@master
+      with:
+      node-version: '12.x'
+      - run: npm install
+      - run: npm run build:prod
+      - uses: w9jds/firebase-action@master
       - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          args: deploy --only hosting
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PLANTAS_MEDICINALES_API }}'
