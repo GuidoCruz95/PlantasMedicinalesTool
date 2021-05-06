@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,26 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  // loginForm= new FormGroup({
-  //     email: new FormControl(""),
-  //     password: new FormControl(""),
-  // });
-  // authSvc: any;
-  // constructor() { }
+  loginForm = new FormGroup({
 
+    email: new FormControl('villca.fuentes23@gmail.com'),
+    password: new FormControl('3coronas')
+  })
   ngOnInit(): void {}
 
-  // async onLogin(){
+  onlogin(){
+    console.log('Form->', this.loginForm.value);
+  }
 
-  //   //console.log("Form->", this.loginForm.value);
-  //   const{emial, password} = this.loginForm.value;
-  //   try {
-  //     this.authSvc.login(emial, password);
-      
-  //   } catch (error) {
-  //     console.log(error);
-      
-  //   }
 
-  //  }
 }
