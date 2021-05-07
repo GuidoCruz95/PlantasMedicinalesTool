@@ -59,11 +59,11 @@ export class InsertarPlantasComponent implements OnInit {
   resetForm() {
     this.insertarImagen.reset();
     this.insertarImagen.setValue({
-      caption: '',
+      nombre: '',
       imageUrl: '',
-      category: 'Animal'
+      descripcion: 'descripcion de la planta'
     });
-    this.imagen = '/assets/img/image_placeholder.jpg';
+    this.imagen = '/assets/img/seleccione.png';
     this.seleccionaImagen = null;
     this.Submit = false;
   }
