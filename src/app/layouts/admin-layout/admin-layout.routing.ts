@@ -12,7 +12,7 @@ import { ListaUsuariosComponent } from '../../web-components/lista-usuarios/list
 import { ComponenteDePruebaComponent } from '../../web-components/componente-de-prueba/componente-de-prueba.component'
 import { VistaListaPlantasComponent } from '../../web-components/vista-lista-plantas/vista-lista-plantas.component';
 import { LoginComponent } from '../../web-components/login/login.component';
-import { Component } from '@angular/core';
+
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: HomeComponent },

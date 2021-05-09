@@ -5,6 +5,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
    providedIn: 'root'
  })
 export class UsuarioServiceService {
+  afAuth: any;
+   updateUserData: any;
 
   constructor(private firestore: AngularFirestore) {
 
@@ -20,5 +22,19 @@ export class UsuarioServiceService {
 
   deleteUser(id: any): any{
     this.firestore.collection('users').doc(id).delete();
+  }
+
+  
+  async login(email: string, password: string): Promise<any> {
+    try {
+      const { user } = await this.afAuth.signInWithEmailAndPassword(
+        email,
+        password
+      );
+      this.updateUserData(user);
+      return user;
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
