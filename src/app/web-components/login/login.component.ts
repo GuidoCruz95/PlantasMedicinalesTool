@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioServiceService } from '../../services/usuario-service.service';
 import { Router } from '@angular/router'
 
+declare var $:any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,6 +13,7 @@ export class LoginComponent implements OnInit {
   ussername = ""
   password = ""
 
+  //List users
   usuarios = []
 
   constructor(private usuarioServiceService: UsuarioServiceService,
@@ -32,7 +34,7 @@ export class LoginComponent implements OnInit {
         return true;
       }
     }
-    console.log("Sus datos no son correctos")
+    //console.log("Sus datos no son correctos")
     return false;
   }
 
@@ -46,4 +48,24 @@ export class LoginComponent implements OnInit {
     }
     );
   }
+
+  //Alert
+    showNotification(from, align){
+      const type = ['','info','success','warning','danger'];
+
+      var color = Math.floor((Math.random() * 4) + 1);
+      $.notify({
+          icon: "pe-7s-delete-user",
+          message: "your email or password details are incorrect. "
+          
+      },{
+          type: type[4],
+          timer: 1000,
+          placement: {
+              from: from,
+              align: align
+          }
+      });
+    }
+
 }
