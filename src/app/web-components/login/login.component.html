@@ -10,19 +10,20 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Nombre de Usuario</label>
-                                    <input type="text" class="form-control" placeholder="Company" [(ngModel)]='ussername'>
+                                    <label>Email</label>
+                                    <input type="text" class="form-control" placeholder="Ussername" (change)="verificarEmail()" [(ngModel)]='ussername' name="ussername">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Contraseña</label>
-                                    <input type="password" class="form-control" placeholder="Company" [(ngModel)]='password'>
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" placeholder="Password" (change)="verificarEmail()" [(ngModel)]='password' name="password">
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" (click)="login()" class="btn btn-primary">Iniciar Sesion</button>
-                        <button type="submit" class="btn btn-danger pull-right">Registrarse</button>
+                        <button type="submit" (click)="login(!ussername)" [disabled]= "!emailValido " 
+                        class="btn btn-primary" (click)="showNotification('top','center')">Iniciar Sesion</button>
+                        <!-- <button type="submit" class="btn btn-danger pull-right">Registrarse</button> -->
                     </div>
                 </div>
             </div>

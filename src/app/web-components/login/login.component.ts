@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioServiceService } from '../../services/usuario-service.service';
 import { Router } from '@angular/router'
 
+
+declare var $:any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,12 +13,20 @@ export class LoginComponent implements OnInit {
 
   ussername = ""
   password = ""
+  emailValido = false
 
+  //List users
   usuarios = []
 
   constructor(private usuarioServiceService: UsuarioServiceService,
     private router: Router) { 
     }
+
+  verificarEmail(): void {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    this.emailValido = Boolean(re.test(this.ussername) && this.password);
+    console.log(this.emailValido)
+  }
 
   login(): any{
     if(this.valid_users()){
@@ -29,11 +39,15 @@ export class LoginComponent implements OnInit {
       let user = this.usuarios[_i]
       if (user.email == this.ussername && user.password == this.password ){
         console.log("Bienvenido "+user.name)
+        $.notify({
+          icon: "pe-7s-user",
+          message: " Bienvenido  Administrador   "  +   user.name
+        })
         return true;
       }
+      //console.log("Sus datos no son correctos")
     }
-    console.log("Sus datos no son correctos")
-    return false;
+      return false;
   }
 
   ngOnInit(): void {
@@ -46,4 +60,26 @@ export class LoginComponent implements OnInit {
     }
     );
   }
+
+  //Alert
+    showNotification(from, align){
+      const type = ['','info','success','warning','danger'];
+
+      var color = Math.floor((Math.random() * 4) + 1);
+      $.notify({
+          icon: "pe-7s-attention",
+          message: "los datos de su correo electrónico o contraseña son incorrectos. "
+          
+      },{
+          type: type[4],
+          timer: 1000,
+          placement: {
+              from: from,
+              align: align
+          }
+      });
+    }
+
 }
+
+
