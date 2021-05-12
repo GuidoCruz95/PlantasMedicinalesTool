@@ -1,33 +1,38 @@
+<h2>Insertar Planta</h2>
 <div class="card" style="width:25rem">
   <div class="card-body">
     <form [formGroup]="insertarImagen" (submit)="onSubmit(insertarImagen.value)">
+
       <div class="text-center">
         <img [src]="imagen" width="350px" height="250px" (click)="fileUploader.click()">
       </div>
+
       <div class="form-group">
         <label>Seleccionar archivo para guardar</label>
-        <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl"
-          (change)="showPreview($event)">
-        <div class="text-danger" *ngIf="Submit && formControls.imageUrl.errors?.required">Este campo es obligatorio.
-        </div>
+        <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)">
+        <div class="text-danger" *ngIf="Submit && formControls.imageUrl.errors?.required">Este campo es obligatorio.</div>
       </div>
+
       <div class="form-group">
         <input class="form-control" formControlName="nombre" placeholder="Nombre de la planta">
-        <div class="text-danger" *ngIf="Submit && formControls.nombre.errors?.required">Este campo es obligatorio.
-        </div>
+        <div class="text-danger" *ngIf="Submit && formControls.nombre.errors?.required">Este campo es obligatorio.</div>
       </div>
+
       <div class="form-group">
         <input class="form-control" formControlName="descripcion" placeholder="Descripcion de la planta">
         <div class="text-danger" *ngIf="Submit && formControls.descripcion.errors?.required">Este campo es obligatorio.</div>
       </div>
+
       <div class="form-row">
         <div class="form-group col-md-6">
           <a routerLink="/image/list" class="btn btn-primary btn-block float-right">registrar en la base de datos</a>
         </div>
+
         <div class="form-group col-md-6">
           <button type="submit" class="btn btn-success btn-block float-right">Submit</button>
         </div>
       </div>
+
     </form>
   </div>
 </div>

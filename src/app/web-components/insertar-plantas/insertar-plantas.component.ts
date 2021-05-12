@@ -23,8 +23,9 @@ export class InsertarPlantasComponent implements OnInit {
   constructor(private storage: AngularFireStorage, private service: InsertPlantaService) { }
 
   ngOnInit(): void {
-    this.resetForm();
+    //this.resetForm();
   }
+
   showPreview(event: any) {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
@@ -33,7 +34,7 @@ export class InsertarPlantasComponent implements OnInit {
       this.seleccionaImagen = event.target.files[0];
     }
     else {
-      this.imagen = '/assets/img/seleccione.png';
+      this.imagen = './src\assets\img\seleccione.png';
       this.seleccionaImagen = null;
     }
   }
@@ -63,8 +64,9 @@ export class InsertarPlantasComponent implements OnInit {
       imageUrl: '',
       descripcion: 'descripcion de la planta'
     });
-    this.imagen = '/assets/img/seleccione.png';
+    this.imagen = './src/assets/img/seleccione.png';
     this.seleccionaImagen = null;
     this.Submit = false;
   }
+
 }

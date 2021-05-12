@@ -21,6 +21,11 @@ import { VistaListaPlantasComponent } from './web-components/vista-lista-plantas
 import { LoginComponent } from './web-components/login/login.component';
 import { InsertarPlantasComponent } from './web-components/insertar-plantas/insertar-plantas.component';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { ReactiveFormsModule } from "@angular/forms";
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -31,7 +36,10 @@ import { InsertarPlantasComponent } from './web-components/insertar-plantas/inse
     FooterModule,
     SidebarModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
