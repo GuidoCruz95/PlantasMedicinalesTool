@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-// import { FormControl, FormGroup } from '@angular/forms';
+import { UsuarioServiceService } from '../../services/usuario-service.service';
+import { Router } from '@angular/router'
 
+
+declare var $:any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,26 +11,75 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  // loginForm= new FormGroup({
-  //     email: new FormControl(""),
-  //     password: new FormControl(""),
-  // });
-  // authSvc: any;
-  // constructor() { }
+  ussername = ""
+  password = ""
+  emailValido = false
 
-  ngOnInit(): void {}
+  //List users
+  usuarios = []
 
-  // async onLogin(){
+  constructor(private usuarioServiceService: UsuarioServiceService,
+    private router: Router) { 
+    }
 
-  //   //console.log("Form->", this.loginForm.value);
-  //   const{emial, password} = this.loginForm.value;
-  //   try {
-  //     this.authSvc.login(emial, password);
-      
-  //   } catch (error) {
-  //     console.log(error);
-      
-  //   }
+  verificarEmail(): void {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    this.emailValido = Boolean(re.test(this.ussername) && this.password);
+    console.log(this.emailValido)
+  }
 
-  //  }
+  login(): any{
+    if(this.valid_users()){
+      this.router.navigate(['./vista-lista-plantas']);
+    }
+  }
+
+  valid_users(): boolean {
+    for (var _i = 0; _i < this.usuarios.length; _i++) {
+      let user = this.usuarios[_i]
+      if (user.email == this.ussername && user.password == this.password ){
+        console.log("Bienvenido "+user.name)
+        $.notify({
+          icon: "pe-7s-user",
+          message: " Bienvenido  Administrador   "  +   user.name
+        })
+        return true;
+      }
+      //console.log("Sus datos no son correctos")
+    }
+      return false;
+  }
+
+  ngOnInit(): void {
+    this.usuarioServiceService.getUsers().subscribe(res=>{
+      this.usuarios = res.map(a => {
+        const data = a.payload.doc.data();
+        data.id = a.payload.doc.id;
+        return data;
+      })
+    }
+    );
+  }
+
+  //Alert
+    showNotification(from, align){
+      const type = ['','info','success','warning','danger'];
+
+      var color = Math.floor((Math.random() * 4) + 1);
+      $.notify({
+          icon: "pe-7s-attention",
+          message: "los datos de su correo electrónico o contraseña son incorrectos. "
+          
+      },{
+          type: type[4],
+          timer: 1000,
+          placement: {
+              from: from,
+              align: align
+          }
+      });
+    }
+
 }
+
+
