@@ -11,19 +11,19 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" placeholder="Ussername" [(ngModel)]='ussername' name="ussername">
+                                    <input type="text" class="form-control" placeholder="Ussername" (change)="verificarEmail()" [(ngModel)]='ussername' name="ussername">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password" [(ngModel)]='password' name="password">
+                                    <input type="password" class="form-control" placeholder="Password" (change)="verificarEmail()" [(ngModel)]='password' name="password">
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" (click)="login(!ussername)" [disabled]= "!ussername" 
+                        <button type="submit" (click)="login(!ussername)" [disabled]= "!emailValido " 
                         class="btn btn-primary" (click)="showNotification('top','center')">Iniciar Sesion</button>
-                        <button type="submit" class="btn btn-danger pull-right">Registrarse</button>
+                        <!-- <button type="submit" class="btn btn-danger pull-right">Registrarse</button> -->
                     </div>
                 </div>
             </div>

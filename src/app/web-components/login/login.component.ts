@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   ussername = ""
   password = ""
+  emailValido = false
 
   //List users
   usuarios = []
@@ -20,6 +21,12 @@ export class LoginComponent implements OnInit {
   constructor(private usuarioServiceService: UsuarioServiceService,
     private router: Router) { 
     }
+
+  verificarEmail(): void {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    this.emailValido = Boolean(re.test(this.ussername) && this.password);
+    console.log(this.emailValido)
+  }
 
   login(): any{
     if(this.valid_users()){
@@ -74,4 +81,5 @@ export class LoginComponent implements OnInit {
     }
 
 }
+
 
