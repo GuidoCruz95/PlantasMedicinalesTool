@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioServiceService } from '../../services/usuario-service.service';
 import { Router } from '@angular/router'
 
+
 declare var $:any;
 @Component({
   selector: 'app-login',
@@ -31,11 +32,15 @@ export class LoginComponent implements OnInit {
       let user = this.usuarios[_i]
       if (user.email == this.ussername && user.password == this.password ){
         console.log("Bienvenido "+user.name)
+        $.notify({
+          icon: "pe-7s-user",
+          message: " Bienvenido  Administrador   "  +   user.name
+        })
         return true;
       }
+      //console.log("Sus datos no son correctos")
     }
-    //console.log("Sus datos no son correctos")
-    return false;
+      return false;
   }
 
   ngOnInit(): void {
@@ -55,8 +60,8 @@ export class LoginComponent implements OnInit {
 
       var color = Math.floor((Math.random() * 4) + 1);
       $.notify({
-          icon: "pe-7s-delete-user",
-          message: "your email or password details are incorrect. "
+          icon: "pe-7s-attention",
+          message: "los datos de su correo electrónico o contraseña son incorrectos. "
           
       },{
           type: type[4],
@@ -69,3 +74,4 @@ export class LoginComponent implements OnInit {
     }
 
 }
+
