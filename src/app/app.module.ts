@@ -19,6 +19,12 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'environments/environment'
 import { VistaListaPlantasComponent } from './web-components/vista-lista-plantas/vista-lista-plantas.component';
 import { LoginComponent } from './web-components/login/login.component';
+import { InsertarPlantasComponent } from './web-components/insertar-plantas/insertar-plantas.component';
+
+import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [
@@ -30,7 +36,10 @@ import { LoginComponent } from './web-components/login/login.component';
     FooterModule,
     SidebarModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
@@ -38,7 +47,8 @@ import { LoginComponent } from './web-components/login/login.component';
     ListaUsuariosComponent,
     ComponenteDePruebaComponent,
     VistaListaPlantasComponent,
-    LoginComponent
+    LoginComponent,
+    InsertarPlantasComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
