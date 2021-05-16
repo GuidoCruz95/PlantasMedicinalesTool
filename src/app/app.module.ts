@@ -25,6 +25,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { ReactiveFormsModule } from "@angular/forms";
+import { DetallePlantaComponent } from './web-components/detalle-planta/detalle-planta/detalle-planta.component';
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     ComponenteDePruebaComponent,
     VistaListaPlantasComponent,
     LoginComponent,
-    InsertarPlantasComponent
+    InsertarPlantasComponent,
+    DetallePlantaComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
