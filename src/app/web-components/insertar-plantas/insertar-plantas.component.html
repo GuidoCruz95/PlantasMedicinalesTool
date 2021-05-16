@@ -1,38 +1,67 @@
-<h2>Insertar Planta</h2>
-<div class="card" style="width:25rem">
-  <div class="card-body">
-    <form [formGroup]="insertarImagen" (submit)="onSubmit(insertarImagen.value)">
-
-      <div class="text-center">
-        <img [src]="imagen" width="350px" height="250px" (click)="fileUploader.click()">
-      </div>
-
-      <div class="form-group">
-        <label>Seleccionar archivo para guardar</label>
-        <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)">
-        <div class="text-danger" *ngIf="Submit && formControls.imageUrl.errors?.required">Este campo es obligatorio.</div>
-      </div>
-
-      <div class="form-group">
-        <input class="form-control" formControlName="nombre" placeholder="Nombre de la planta">
-        <div class="text-danger" *ngIf="Submit && formControls.nombre.errors?.required">Este campo es obligatorio.</div>
-      </div>
-
-      <div class="form-group">
-        <input class="form-control" formControlName="descripcion" placeholder="Descripcion de la planta">
-        <div class="text-danger" *ngIf="Submit && formControls.descripcion.errors?.required">Este campo es obligatorio.</div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <a routerLink="/image/list" class="btn btn-primary btn-block float-right">registrar en la base de datos</a>
+<div class="main-content" >
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="card card-user">
+              <div>
+                  <img class="planta-imagen" [src]="planta$.foto"/>
+              </div>
+          </div>
         </div>
+          <div class="col-md-7">
+              <div class="card">
+                  <div class="header">
+                      <h4 class="title">Informacion especifica de la planta</h4>
+                  </div>
+                  <div class="content">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label>Nombre Comun</label>
+                                      <input [(ngModel)]="planta$.nombre" type="text" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
 
-        <div class="form-group col-md-6">
-          <button type="submit" class="btn btn-success btn-block float-right">Submit</button>
-        </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Nombre Cientifico</label>
+                                    <input [(ngModel)]="planta$.nombre_cientifico" type="text" class="form-control" placeholder="Username" value="Nombre Cientifico de la planta">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>Origen de la Planta</label>
+                                  <input [(ngModel)]="planta$.origen" type="text" class="form-control" placeholder="Username" value="Origen">
+                              </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>Beneficios</label>
+                                  <textarea [(ngModel)]="planta$.beneficios" rows="3" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                              </div>
+                          </div>
+                        </div>
+
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label>Usos Medicinales</label>
+                                      <textarea [(ngModel)]="planta$.usos_medicinales" rows="3" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                  </div>
+                              </div>
+                          </div>
+                          <button type="submit" class="btn btn-primary btn-fill pull-right">Guardar Informacion</button>
+                  </div>
+              </div>
+          </div>
       </div>
-
-    </form>
   </div>
 </div>
