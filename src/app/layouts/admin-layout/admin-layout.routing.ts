@@ -13,6 +13,8 @@ import { ComponenteDePruebaComponent } from '../../web-components/componente-de-
 import { VistaListaPlantasComponent } from '../../web-components/vista-lista-plantas/vista-lista-plantas.component';
 import { LoginComponent } from '../../web-components/login/login.component';
 import { Component } from '@angular/core';
+import { InsertarPlantasComponent } from '../../web-components/insertar-plantas/insertar-plantas.component';
+
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: HomeComponent },
@@ -27,4 +29,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'componente-prueba',  component: ComponenteDePruebaComponent},
     { path: 'vista-lista-plantas', component:  VistaListaPlantasComponent},
     { path: 'login', component:  LoginComponent},
+    { path: 'insertar-plantas', component:  InsertarPlantasComponent}
 ];
