@@ -17,4 +17,8 @@ export class PlantaService {
   getPlantas(): any {
     return this.dataCollection.valueChanges()
   }
+
+  createPlantas(planta: any): any{
+    return this.firestore.collection('plantas').add(planta);
+  }
 }
