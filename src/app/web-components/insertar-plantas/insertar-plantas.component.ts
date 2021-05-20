@@ -1,72 +1,53 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AngularFireStorage } from '@angular/fire/storage';
-import { finalize } from "rxjs/operators";
-import { InsertPlantaService } from '../../services/insertar planta/insert-planta.service'
+import { PlantaService } from '../../services/plantas/planta.service'
+import { Router } from '@angular/router'
 
+declare var $:any;
 @Component({
   selector: 'app-insertar-plantas',
   templateUrl: './insertar-plantas.component.html',
   styleUrls: ['./insertar-plantas.component.css']
 })
 export class InsertarPlantasComponent implements OnInit {
+  planta$ = {
+    'nombre': "Planta Nueva",
+    'nombre_cientifico': "nombre scientifico",
+    'beneficios': "Beneficios de la planta",
+    'origen': "Origen de la planta",
+    'usos_medicinales': "Usos medicinales de la planta",
+    'foto': ""
+  }
 
-  imagen: string;
-  seleccionaImagen: any = null;
-  Submit: boolean;
+  constructor(private plantaService: PlantaService,
+    private router: Router) { }
 
-  insertarImagen = new FormGroup({
-    nombre: new FormControl('', Validators.required),
-    descripcion: new FormControl('', Validators.required),
-    imageUrl: new FormControl('', Validators.required)
-  })
-  constructor(private storage: AngularFireStorage, private service: InsertPlantaService) { }
+  registrar_planta() {
+    this.showNotification("Falta cargar imagen para guardar la informacion de la planta.", 'info');
+    // this.plantaService.createPlantas(this.planta$).then(() => {
+    //   console.log("Guardado....");
+    //   this.router.navigate(['./vista-lista-plantas']);
+    //   this.showNotification("Planta registrada correctamente.", 'info');
+    // })
+    // .catch((error) => {
+    //   console.log("Guardado....");
+    //   this.showNotification("Error al registrar la planta en el sistema", 'danger');
+    // });
+  }
+
+  showNotification(message, type){
+    $.notify({
+        icon: "pe-7s-gift",
+        message: message
+    },{
+        type: type,
+        timer: 1000,
+        placement: {
+            from: 'top',
+            align: 'right'
+        }
+    });
+}
 
   ngOnInit(): void {
-    //this.resetForm();
   }
-
-  showPreview(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => this.imagen = e.target.result;
-      reader.readAsDataURL(event.target.files[0]);
-      this.seleccionaImagen = event.target.files[0];
-    }
-    else {
-      this.imagen = './src\assets\img\seleccione.png';
-      this.seleccionaImagen = null;
-    }
-  }
-  onSubmit(formValue) {
-    this.Submit = true;
-    if (this.insertarImagen.valid) {
-      var filePath = `${formValue.category}/${this.seleccionaImagen.name.split('.').slice(0, -1).join('.')}_${new Date().getTime()}`;
-      const fileRef = this.storage.ref(filePath);
-      this.storage.upload(filePath, this.seleccionaImagen).snapshotChanges().pipe(
-        finalize(() => {
-          fileRef.getDownloadURL().subscribe((url) => {
-            formValue['imageUrl'] = url;
-            this.service.insertImageDetails(formValue);
-            this.resetForm();
-          })
-        })
-      ).subscribe();
-    }
-  }
-  get formControls() {
-    return this.insertarImagen['controls'];
-  }
-  resetForm() {
-    this.insertarImagen.reset();
-    this.insertarImagen.setValue({
-      nombre: '',
-      imageUrl: '',
-      descripcion: 'descripcion de la planta'
-    });
-    this.imagen = './src/assets/img/seleccione.png';
-    this.seleccionaImagen = null;
-    this.Submit = false;
-  }
-
 }

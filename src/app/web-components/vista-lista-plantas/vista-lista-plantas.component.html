@@ -6,14 +6,14 @@
                 <div class="card">
                     <div class="header">
                         <h4 class="title">Plantas Medicinales</h4>
-                        <p class="category">informacion de las siguientes plantas, esperemos poder ayudarlo</p>
+                        <p class="category">A continuacion le mostramos la informacion de las siguientes plantas medicinales, esperemos poder ayudarlo</p>
                     </div>
                     <div class="content all-icons">
                         <div class="row">
                             <div class="font-icon-list col-md-3" *ngFor="let planta of plantas$ | async">
                                 <div class="font-icon-detail">
                                     <img class="img-rounded resized" [src]="planta.foto" [alt]="planta.nombre">
-                                    <span class="imagebox-desc">{{planta.nombre}}</span>
+                                    <span class="imagebox-desc">{{planta.nombre}} | <a [routerLink]="['/detalle-planta', planta.nombre]">detalles</a></span>
                                 </div>
                             </div>
                         </div>

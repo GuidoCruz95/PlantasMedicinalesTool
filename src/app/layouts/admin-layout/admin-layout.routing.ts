@@ -14,6 +14,7 @@ import { VistaListaPlantasComponent } from '../../web-components/vista-lista-pla
 import { LoginComponent } from '../../web-components/login/login.component';
 import { Component } from '@angular/core';
 import { InsertarPlantasComponent } from '../../web-components/insertar-plantas/insertar-plantas.component';
+import { DetallePlantaComponent } from 'app/web-components/detalle-planta/detalle-planta/detalle-planta.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -29,5 +30,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'componente-prueba',  component: ComponenteDePruebaComponent},
     { path: 'vista-lista-plantas', component:  VistaListaPlantasComponent},
     { path: 'login', component:  LoginComponent},
-    { path: 'insertar-plantas', component:  InsertarPlantasComponent}
+    { path: 'insertar-plantas', component:  InsertarPlantasComponent},
+    { path: 'detalle-planta/:id', component: DetallePlantaComponent}
 ];

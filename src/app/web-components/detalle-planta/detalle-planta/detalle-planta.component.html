@@ -1,0 +1,75 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card card-user">
+                    <div>
+                        <img class="planta-imagen" [src]="planta$.foto"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">informacion detallada de <b>{{planta$.nombre}}</b></h4>
+                    </div>
+                    <div class="content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div>
+                                        <h3 class="title">Nombre Comun</h3>
+                                    </div>
+                                    <div>
+                                        <p class="text-muted">{{planta$.nombre}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div>
+                                        <h3 class="title">Nombre Cientifico</h3>
+                                    </div>
+                                    <div>
+                                        <p class="text-muted">{{planta$.nombre_cientifico}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div>
+                                        <h3 class="title">Beneficios</h3>
+                                    </div>
+                                    <div>
+                                        <p class="text-muted">{{planta$.beneficios}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div>
+                                        <h3 class="title">Origen de la Planta</h3>
+                                    </div>
+                                    <div>
+                                        <p class="text-muted">{{planta$.origen}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div>
+                                        <h3>Usos Medicinales</h3>
+                                    </div>
+                                    <div>
+                                        <p class="text-muted">{{planta$.usos_medicinales}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
