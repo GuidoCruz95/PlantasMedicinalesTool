@@ -14,7 +14,8 @@ export class InsertarPlantasComponent implements OnInit {
     'nombre_cientifico': "nombre scientifico",
     'beneficios': "Beneficios de la planta",
     'origen': "Origen de la planta",
-    'usos_medicinales': "Usos medicinales de la planta"
+    'usos_medicinales': "Usos medicinales de la planta",
+    'foto': ""
   }
 
   constructor(private plantaService: PlantaService,
