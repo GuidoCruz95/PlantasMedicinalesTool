@@ -15,15 +15,6 @@ export class ListaUsuariosComponent implements OnInit {
 
   constructor(private userService: UsuarioServiceService) { }
 
-  agregarNuevoElementoADataTwoWay(): void {
-    var nuevoElemento = {
-      "name": "NuevoItemName", 
-      "lastName": "NuevoElemnt:astName"
-    }
-
-    this.data_two_way_content.push(nuevoElemento)
-  }
-
   funcionDeTS(): void {
     console.log("the function 'nuevaFuncion' was executed.")
   }
@@ -34,7 +25,7 @@ export class ListaUsuariosComponent implements OnInit {
         const data = a.payload.doc.data();
         data.id = a.payload.doc.id;
         return data;
-      })
+      }).sort()
     }
     );
   }
