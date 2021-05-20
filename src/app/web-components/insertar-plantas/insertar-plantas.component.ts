@@ -22,15 +22,16 @@ export class InsertarPlantasComponent implements OnInit {
     private router: Router) { }
 
   registrar_planta() {
-    this.plantaService.createPlantas(this.planta$).then(() => {
-      console.log("Guardado....");
-      this.router.navigate(['./vista-lista-plantas']);
-      this.showNotification("Planta registrada correctamente.", 'info');
-    })
-    .catch((error) => {
-      console.log("Guardado....");
-      this.showNotification("Error al registrar la planta en el sistema", 'danger');
-    });
+    this.showNotification("Falta cargar imagen para guardar la informacion de la planta.", 'info');
+    // this.plantaService.createPlantas(this.planta$).then(() => {
+    //   console.log("Guardado....");
+    //   this.router.navigate(['./vista-lista-plantas']);
+    //   this.showNotification("Planta registrada correctamente.", 'info');
+    // })
+    // .catch((error) => {
+    //   console.log("Guardado....");
+    //   this.showNotification("Error al registrar la planta en el sistema", 'danger');
+    // });
   }
 
   showNotification(message, type){
