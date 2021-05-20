@@ -11,7 +11,7 @@ export class PlantaService {
   dataCollection: AngularFirestoreCollection<any>;
 
   constructor(private firestore: AngularFirestore) {
-    this.dataCollection = firestore.collection<any>("plantas");
+    this.dataCollection = firestore.collection<any>("plantas", ref => ref.orderBy('nombre', 'asc'));
   }
 
   getPlantas(): any {
