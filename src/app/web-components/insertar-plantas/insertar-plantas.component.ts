@@ -11,10 +11,10 @@ declare var $:any;
 export class InsertarPlantasComponent implements OnInit {
   planta$ = {
     'nombre': "",
-    'nombre_cientifico': "nombre scientifico",
-    'beneficios': "Beneficios de la planta",
-    'origen': "Origen de la planta",
-    'usos_medicinales': "Usos medicinales de la planta",
+    'nombre_cientifico': "",
+    'beneficios': "",
+    'origen': "",
+    'usos_medicinales': "",
     'foto': ""
   }
 
