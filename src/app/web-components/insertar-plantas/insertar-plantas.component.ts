@@ -10,7 +10,7 @@ declare var $:any;
 })
 export class InsertarPlantasComponent implements OnInit {
   planta$ = {
-    'nombre': "Planta Nueva",
+    'nombre': "",
     'nombre_cientifico': "nombre scientifico",
     'beneficios': "Beneficios de la planta",
     'origen': "Origen de la planta",
