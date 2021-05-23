@@ -4,7 +4,9 @@
         <div class="col-md-5">
           <div class="card card-user">
               <div>
-                  <img class="planta-imagen" [src]="planta$.foto"/>
+                  <!-- <img class="planta-imagen" [src]="planta$.foto"/> -->
+                  <img class="uploadImage" [src]="previa"/>
+                  <input type="file" (change)="upload($event)" accept=".png,.jpg"/>
               </div>
           </div>
         </div>
