@@ -26,6 +26,7 @@ import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { ReactiveFormsModule } from "@angular/forms";
 import { DetallePlantaComponent } from './web-components/detalle-planta/detalle-planta/detalle-planta.component';
+import { RegistrarUserComponent } from './web-components/registrar-user/registrar-user.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { DetallePlantaComponent } from './web-components/detalle-planta/detalle-
     VistaListaPlantasComponent,
     LoginComponent,
     InsertarPlantasComponent,
-    DetallePlantaComponent
+    DetallePlantaComponent,
+    RegistrarUserComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
