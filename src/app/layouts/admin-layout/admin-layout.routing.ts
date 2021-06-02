@@ -15,6 +15,7 @@ import { LoginComponent } from '../../web-components/login/login.component';
 import { Component } from '@angular/core';
 import { InsertarPlantasComponent } from '../../web-components/insertar-plantas/insertar-plantas.component';
 import { DetallePlantaComponent } from 'app/web-components/detalle-planta/detalle-planta/detalle-planta.component';
+import { RegistrarUserComponent } from 'app/web-components/registrar-user/registrar-user.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -31,5 +32,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'vista-lista-plantas', component:  VistaListaPlantasComponent},
     { path: 'login', component:  LoginComponent},
     { path: 'insertar-plantas', component:  InsertarPlantasComponent},
-    { path: 'detalle-planta/:id', component: DetallePlantaComponent}
+    { path: 'detalle-planta/:id', component: DetallePlantaComponent},
+    { path: 'registrar-user', component: RegistrarUserComponent}
 ];
