@@ -7,27 +7,31 @@
                         <h4 class="title">Registrar Administrador</h4>
                     </div>
                     <div class="content">
-                        <form>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>NOMBRE COMPLETO*</label>
-                                        <input type="text" class="form-control" placeholder="Nombres" value="">
+                                        <input type="text" class="form-control" placeholder="Nombre(s)" value="">
                                     </div>
                                 </div>
+                            </div>
+
+                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">APELLIDO PATERNO*</label>
                                         <input type="email" class="form-control" placeholder="Apellido Paterno">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">APELLIDO MATERNO*</label>
-                                        <input type="email" class="form-control" placeholder="Apellido Materno">
-                                    </div>
-                                </div>
-                            </div>
+                             </div>
+
+                             <div class="row">
+                                 <div class="col-md-6">
+                                 <div class="form-group">
+                                     <label for="exampleInputEmail1">APELLIDO MATERNO*</label>
+                                     <input type="email" class="form-control" placeholder="Apellido Materno">
+                                 </div>
+                             </div>
 
                             <div class="row">
                                 <div class="col-md-6">
@@ -36,6 +40,9 @@
                                         <input type="text" class="form-control" placeholder="Telefono" value="">
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label> CELULAR*</label>
@@ -45,7 +52,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>CORREO ELECTRONICO*</label>
                                         <input type="text" class="form-control" placeholder="Correo Electronico" value="">
@@ -62,11 +69,10 @@
                                 </div>
                             </div>
                             <div class="button-r">
-                                <button type="submit" class="btn btn-info btn-fill pull-right" > Cancelar</button>
-    
-                                <button type="submit" class="btn btn-info btn-fill pull-right">Registrar</button>
+                                <button (click)='registrar_planta()' class="btn btn-primary btn-fill pull-right"> Registrar  </button>
+                                
+                                <button (click)='registrar_planta()' class="btn btn-primary btn-fill pull-right"> Cancelar </button>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>
