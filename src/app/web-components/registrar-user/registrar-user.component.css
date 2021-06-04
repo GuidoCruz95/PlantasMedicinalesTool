@@ -14,9 +14,17 @@
 
     font-weight:bold;
 }
-input{
+.input{
     display: inline-flex;
     align-content: center;
+}
+.button-r{
+    padding-top: 6%;
+    padding-right: 50%;
+}
+.button-registrar{
+
+    margin-left: 130%;
 }
 
 
