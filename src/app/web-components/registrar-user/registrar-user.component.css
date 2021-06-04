@@ -1,0 +1,22 @@
+ .content{
+   
+    padding-left: 15%;
+}
+
+.title{
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 5%;
+    padding-top: 2%;
+    font-weight: bold;
+}
+.name{
+
+    font-weight:bold;
+}
+input{
+    display: inline-flex;
+    align-content: center;
+}
+
+
