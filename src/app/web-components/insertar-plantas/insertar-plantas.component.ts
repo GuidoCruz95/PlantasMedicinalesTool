@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlantaService } from '../../services/plantas/planta.service'
 import { Router } from '@angular/router'
-import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
-import { not } from '@angular/compiler/src/output/output_ast';
-import { LEADING_TRIVIA_CHARS } from '@angular/compiler/src/render3/view/template';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 declare var $:any;
 @Component({
