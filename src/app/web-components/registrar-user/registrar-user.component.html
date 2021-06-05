@@ -1,1 +1,75 @@
-<p>registrar-user works!</p>
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card offset-md-2">
+                    <div class="header">
+                        <h4 class="title">Registrar Administrador</h4>
+                    </div>
+                    <div class="content">                     
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <div>
+                                            <label class="name" >NOMBRE COMPLETO*</label>
+                                            <input type="text" class="form-control" required placeholder="Nombre(s)" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label class="name">APELLIDO PATERNO*</label>
+                                        <input type="text" class="form-control" placeholder="Apellido Paterno" value="">
+                                    </div>
+                                </div>
+                             </div>
+
+                             <div class="row">
+                                 <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label class="name">APELLIDO MATERNO*</label>
+                                        <input type="text" class="form-control" placeholder="Apellido Materno" value="">
+                                    </div>
+                               </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="name"> TELEFONO</label>
+                                        <input type="" class="form-control" placeholder="Telefono" value="">
+                                    </div>
+                                </div>
+                           
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="name"> CELULAR </label>
+                                        <input type="" class="form-control" placeholder="Celular" value="">
+                                    </div>
+                                </div>
+                           
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label class="name">CORREO ELECTRONICO*</label>
+                                        <input type="email" class="form-control" placeholder="Correo Electronico" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-r">
+                                <div class="button-registrar">
+                                    <button type="submit" (click)='registrar_planta()' class="btn btn-primary btn-fill pull-right"> Registrar  </button>
+                                </div>
+                                <div class="button-cancelar">
+                                    <button (click)='registrar_planta()' class="btn btn-primary btn-fill "> Cancelar </button>
+                                </div>      
+                            </div>
+                        </div>                      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
