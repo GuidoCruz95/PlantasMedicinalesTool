@@ -1,19 +1,18 @@
 <div class="main-content">
     <div class="container-fluid">
-        <h1>LISTA DE PLANTAS</h1>
-        <div class="row">
+            <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">PLANTAS MEDICINALES</h4>
-                        <p class="category">A CONTINUACION LE MOSTRAMOS LA INFORMACION DE LAS SIGUIENTES PLANTAS MEDICINALES, ESPERAMOS PODER AYUDARLO</p>
+                        <h4 class="title">Plantas Medicinales</h4>
+                        <p class="category">A Continuación Le Mostramos La Información De Las Siguientes Plantas Medicinales, Esperamos Poder Ayudarlo</p>
                     </div>
                     <div class="content all-icons">
                         <div class="row">
                             <div class="font-icon-list col-md-3" *ngFor="let planta of plantas$ | async">
                                 <div class="font-icon-detail">
                                     <img class="img-rounded resized" [src]="planta.foto" [alt]="planta.nombre">
-                                    <span class="imagebox-desc">{{planta.nombre}} | <a [routerLink]="['/detalle-planta', planta.nombre]">detalles</a></span>
+                                    <span class="imagebox-desc"><br />{{planta.nombre}} | <a [routerLink]="['/detalle-planta', planta.nombre]">detalles</a></span>
                                 </div>
                             </div>
                         </div>
