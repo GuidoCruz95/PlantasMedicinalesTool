@@ -8,22 +8,21 @@
                         <h4 class="title">Usuarios Registrados En El Sistema</h4>
                         <p class="category">Los Siguientes Usuarios Tienen Permiso De Escritura De Información Relacionada a Las Plantas en el Sistema</p>
                     </div>
-                    <div class="content table-responsive table-full-width">
-                          <table class="table table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <th *ngFor="let column of data_two_way_headers">{{ column }}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let data of data_two_way_content">
-                                        <td>{{data.name}}</td>
-                                        <td>{{data.lastname}}</td>
-                                        <td>{{data.email}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
+                    <div class="content table-responsive table-full-width">  
+                        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th *ngFor="let column of data_two_way_headers">{{ column }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of data_two_way_content">
+                                    <td>{{data.name}}</td>
+                                    <td>{{data.lastname}}</td>
+                                    <td>{{data.email}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
