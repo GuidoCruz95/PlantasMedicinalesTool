@@ -21,10 +21,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="button-ini">
-                            <button type="submit" (click)="login()" [disabled]= "!emailValido" class="btn btn-primary">Iniciar Sesion</button>
-                            <!-- <button type="submit" class="btn btn-danger pull-right">Registrarse</button> -->
-                        </div>
+                        <button (click)="login()" [disabled]= "!emailValido" class="btn btn-primary btn-fill pull-lefth">Iniciar Sesion</button>
+                        <!-- <button type="submit" class="btn btn-danger pull-right">Registrarse</button> -->
                     </div>
                 </div>
             </div>
