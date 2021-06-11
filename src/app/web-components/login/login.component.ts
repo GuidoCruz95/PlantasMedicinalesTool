@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
   login(): any{
     if(this.valid_users()){
       this.router.navigate(['./vista-lista-plantas']);
+    } else {
+      this.showNotification('danger', "Los datos introducidos no son correctos.")
     }
   }
 
@@ -38,14 +40,10 @@ export class LoginComponent implements OnInit {
     for (var _i = 0; _i < this.usuarios.length; _i++) {
       let user = this.usuarios[_i]
       if (user.email == this.ussername && user.password == this.password ){
-        console.log("Bienvenido "+user.name)
-        $.notify({
-          icon: "pe-7s-user",
-          message: " Bienvenido  Administrador   "  +   user.name
-        })
+        console.log("Bienvenido " + user.name)
+        this.showNotification('success', "Bienvenido "+user.name)
         return true;
       }
-      //console.log("Sus datos no son correctos")
     }
       return false;
   }
@@ -62,23 +60,22 @@ export class LoginComponent implements OnInit {
   }
 
   //Alert
-    showNotification(from, align){
-      const type = ['','info','success','warning','danger'];
+  showNotification(msg_type, message){
+    const type = ['','info','success','warning','danger'];
 
-      var color = Math.floor((Math.random() * 4) + 1);
-      $.notify({
-          icon: "pe-7s-attention",
-          message: "los datos de su correo electrónico o contraseña son incorrectos. "
-          
-      },{
-          type: type[4],
-          timer: 1000,
-          placement: {
-              from: from,
-              align: align
-          }
-      });
-    }
+    $.notify({
+        icon: "pe-7s-attention",
+        message: message
+        
+    },{
+        type: msg_type,
+        timer: 1000,
+        placement: {
+            from: 'top',
+            align: 'right'
+        }
+    });
+  }
 
 }
 
