@@ -12,7 +12,11 @@
                                     <div class="form-group">
                                         <div>
                                             <label class="name" >(*) Nombre Completo</label>
-                                            <input type="text" class="form-control" required placeholder="Nombre(s)" value="">
+                                            <input 
+                                            type="text" class="form-control" 
+                                            placeholder="Nombre(s)" value=""
+                                            [(ngModel)]="user.name"
+                                            (ngModelChange)="validarFormulario()">
                                         </div>
                                     </div>
                                 </div>
@@ -22,51 +26,43 @@
                                 <div class="col-md-10">
                                     <div class="form-group">
                                         <div>
-                                            <label class="name">(*) Apellido Paterno</label>
-                                            <input type="text" class="form-control" placeholder="Apellido Paterno" value="">
+                                            <label class="name">(*) Apellidos</label>
+                                            <input 
+                                            type="text" class="form-control" 
+                                            placeholder="Apellido Paterno" value=""
+                                            [(ngModel)]="user.lastname"
+                                            (ngModelChange)="validarFormulario()">
                                         </div>
                                     </div>
                                 </div>
                              </div>
 
-                             <div class="row">
-                                 <div class="col-md-10">
-                                    <div class="form-group">
-                                        <label class="name">(*) Apellido Materno</label>
-                                        <input type="text" class="form-control" placeholder="Apellido Materno" value="">
-                                    </div>
-                               </div>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label class="name"> Telefono</label>
-                                        <input type="" class="form-control" placeholder="Telefono" value="">
-                                    </div>
-                                </div>
-                           
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label class="name"> Celular </label>
-                                        <input type="" class="form-control" placeholder="Celular" value="">
-                                    </div>
-                                </div>
-                           
+                            <div class="row">                           
                                 <div class="col-md-10">
                                     <div class="form-group">
                                         <label class="name">(*) Correo Electronico</label>
-                                        <input type="email" class="form-control" placeholder="Correo Electronico" value="">
+                                        <input type="email" class="form-control" 
+                                        placeholder="Correo Electronico" value=""
+                                        [(ngModel)]="user.email"
+                                        (ngModelChange)="validarFormulario()">
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label class="name"> Celular </label>
+                                        <input type="number" class="form-control" 
+                                        placeholder="Celular" value=""
+                                        [(ngModel)]="user.phone"
+                                        (ngModelChange)="validarFormulario()">
                                     </div>
                                 </div>
                             </div>
                             <div class="button-r">
                                 <div class="button-registrar">
-                                    <button type="submit" class="btn btn-primary btn-fill pull-right"> Registrar  </button>
+                                    <button class="btn btn-primary btn-fill pull-right" (click)='registry()' [disabled]= "!formularioValido"> Registrar  </button>
                                 </div>
                                 <div class="button-cancelar">
-                                    <button class="btn btn-primary btn-fill "> Cancelar </button>
+                                    <button class="btn btn-danger btn-fill" (click)='cancelRegistry()'> Cancelar </button>
                                 </div>      
                             </div>
                         </div>                      
