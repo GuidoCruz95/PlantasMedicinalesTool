@@ -54,7 +54,7 @@ export class InsertarPlantasComponent implements OnInit {
     if(this.exists){
       this.showNotification("Otra planta con el mismo "+this.atributo+" ya existe en el sistema.", 'danger');
     } else {
-      this.showNotification("Iniciando el registro, espere por favor.", 'warning');
+      this.showNotification("Iniciando El Registro, Espere Por Favor.", 'warning');
       const snap = await this.afStorage.upload(this.file.name, this.file)
       this.foto = await snap.ref.getDownloadURL();
       this.planta$.foto = this.foto
