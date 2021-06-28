@@ -62,7 +62,7 @@ export class InsertarPlantasComponent implements OnInit {
         this.plantaService.createPlantas(this.planta$).then(() => {
           console.log("Guardado....");
           this.router.navigate(['./vista-lista-plantas']);
-          this.showNotification("Planta registrada correctamente.", 'info');
+          this.showNotification("Planta Registrada correctamente.", 'info');
         })
         .catch((error) => {
           console.log("Error al registrar datos.");
