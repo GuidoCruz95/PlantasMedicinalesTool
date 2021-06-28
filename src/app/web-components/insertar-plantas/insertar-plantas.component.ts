@@ -52,7 +52,7 @@ export class InsertarPlantasComponent implements OnInit {
   async registrar_planta() {
     this.verify()
     if(this.exists){
-      this.showNotification("Otra planta con el mismo "+this.atributo+" ya existe en el sistema.", 'danger');
+      this.showNotification("Otra planta con el mismo nombre de "+this.atributo+" ya existe en el sistema.", 'danger');
     } else {
       this.showNotification("Iniciando el registro, espere por favor.", 'warning');
       const snap = await this.afStorage.upload(this.file.name, this.file)
