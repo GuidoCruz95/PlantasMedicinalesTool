@@ -25,7 +25,7 @@ export class InsertarPlantasComponent implements OnInit {
   formularioValido = false
   imageZise = 0
 
-  regex = /^[a-zA-Z0-9]+$/
+  regex = /^[a-zA-Z0-9 ]+$/
 
   exists = false
   atributo
