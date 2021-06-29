@@ -80,9 +80,12 @@ export class InsertarPlantasComponent implements OnInit {
           this.exists = true
           this.atributo = "nombre"
         } else {
+          console.log(planta.nombre_cientifico)
           if(planta.nombre_cientifico == this.planta$.nombre_cientifico){
             this.exists = true
             this.atributo = "nombre cientifico"
+          } else {
+            this.exists = false
           }
         }
       }
@@ -95,7 +98,7 @@ export class InsertarPlantasComponent implements OnInit {
       this.previa !== false &&
       (this.planta$.nombre.length >2 && this.planta$.nombre.length <= 40 && this.planta$.nombre.match(this.regex)) &&
       (this.planta$.nombre_cientifico.length >=5 && this.planta$.nombre_cientifico.length <= 40 && this.planta$.nombre_cientifico.match(this.regex)) &&
-      (this.planta$.beneficios.length >=10 && this.planta$.beneficios.length <= 40) &&
+      (this.planta$.beneficios.length >=10) &&
       (this.planta$.usos_medicinales.length >=10 || this.planta$.usos_medicinales.length == 0) &&
       ((this.planta$.origen.length >=10  && this.planta$.origen.match(this.regex)) || this.planta$.origen.length == 0) &&
       (this.imageZise < 5242880)
